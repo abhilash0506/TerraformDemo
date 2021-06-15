@@ -21,11 +21,12 @@ resource "aws_instance" "Terraform" {
   tags = {
     Name = "AppServerInstance"
     Purpose = "ToRunTomcatServer"
+    user_data = <<-EOF
+    #!/bin/bash 
+    yum -y java-1.8.0-openjdk-devel 
+    yum -y install tomcat 
+    systemctl enable tomcat 
+    systemctl start tomcat echo "
   }
 }
-<<-EOF
-  #!bin/bash
-  sudo yum install tomcat
-  sudo systemctl enable tomcat
-  sudo systemctl start tomcat
- EOF
+
