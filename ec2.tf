@@ -20,5 +20,6 @@ resource "aws_instance" "Terraform" {
 
   tags = {
     Name = "AppServerInstance"
+    Purpose = "ToRunTomcatServer"
   }
 }
