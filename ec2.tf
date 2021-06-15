@@ -25,7 +25,7 @@ resource "aws_instance" "Terraform" {
 }
 user_data = <<-EOF
   #!bin/bash
-  sudo amazon-linux-extras install tomcat8.5
+  sudo yum install tomcat
   sudo systemctl enable tomcat
   sudo systemctl start tomcat
   EOF
