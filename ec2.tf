@@ -23,9 +23,9 @@ resource "aws_instance" "Terraform" {
     Purpose = "ToRunTomcatServer"
   }
 }
-user_data = <<-EOF
+<<-EOF
   #!bin/bash
   sudo yum install tomcat
   sudo systemctl enable tomcat
   sudo systemctl start tomcat
-  EOF
+ EOF
